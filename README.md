@@ -1,3 +1,7 @@
+# Online
+* https://github.com/tovrleaf/wadup-s15-kertaus-nkivela
+* https://wadup-s15-kertaus-nkivela.herokuapp.com/
+
 # Initial steps
 ```
 $ git init ; git add . ; git commit -m "Initial commit"

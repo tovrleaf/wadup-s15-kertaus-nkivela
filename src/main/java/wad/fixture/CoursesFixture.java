@@ -5,17 +5,17 @@ import java.text.SimpleDateFormat;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import wad.domain.Exam;
-import wad.domain.Room;
+import wad.domain.ClassRoom;
 import wad.domain.Teacher;
 import wad.repository.ExamRepository;
-import wad.repository.RoomRepository;
+import wad.repository.ClassRoomRepository;
 import wad.repository.TeacherRepository;
 
 @Service
 public class CoursesFixture {
     
     @Autowired
-    private RoomRepository roomRepository;
+    private ClassRoomRepository roomRepository;
     
     @Autowired
     private TeacherRepository teacherRepository;
@@ -24,11 +24,11 @@ public class CoursesFixture {
     private ExamRepository examRepository;
     
     public void populate() throws ParseException {
-        Room rA11 = new Room();
+        ClassRoom rA11 = new ClassRoom();
         rA11.setName("A11");
         rA11 = roomRepository.save(rA11);
         
-        Room rB123 = new Room();
+        ClassRoom rB123 = new ClassRoom();
         rB123.setName("B123");
         rB123 = roomRepository.save(rB123);
         

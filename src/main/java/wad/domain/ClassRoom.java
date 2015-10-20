@@ -7,7 +7,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
 @Entity
-public class Room extends AbstractPersistable<Long> {
+public class ClassRoom extends AbstractPersistable<Long> {
     
     @NotEmpty
     private String name;

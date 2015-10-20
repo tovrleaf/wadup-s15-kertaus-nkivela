@@ -25,7 +25,7 @@ public class Exam extends AbstractPersistable<Long> {
     private Teacher examiner;
     
     @ManyToOne
-    private Room room;
+    private ClassRoom room;
     
     @NotNull
     @Temporal(TemporalType.TIMESTAMP)
@@ -61,11 +61,11 @@ public class Exam extends AbstractPersistable<Long> {
         this.examiner = examiner;
     }
 
-    public Room getRoom() {
+    public ClassRoom getRoom() {
         return room;
     }
 
-    public void setRoom(Room room) {
+    public void setRoom(ClassRoom room) {
         this.room = room;
     }
 

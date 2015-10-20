@@ -7,7 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import wad.domain.Exam;
-import wad.domain.Room;
+import wad.domain.ClassRoom;
 import wad.repository.ExamRepository;
 
 @Controller

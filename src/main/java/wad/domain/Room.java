@@ -10,17 +10,17 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 public class Room extends AbstractPersistable<Long> {
     
     @NotEmpty
-    private String identifier;
+    private String name;
     
     @ManyToMany(mappedBy = "rooms")
     private List<Exam> exams;
-    
-    public String getIdentifier() {
-        return identifier;
+
+    public String getName() {
+        return name;
     }
 
-    public void setIdentifier(String identifier) {
-        this.identifier = identifier;
+    public void setName(String name) {
+        this.name = name;
     }
     
     public List<Exam> getExams() {

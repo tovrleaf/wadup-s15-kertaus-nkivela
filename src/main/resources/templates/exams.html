@@ -44,8 +44,8 @@
                         <td th:text="${course.courseCode}"></td>
                         <td th:text="${course.examiner.name}"></td>
                         <td>
-                            <div th:each="room : ${course.rooms}">
-                                <span th:text="${room.name}"></span> 
+                            <div th:each="r : ${course.rooms}">
+                                <span th:text="${r.name}"></span> 
                             </div>
                         </td>
                     </tr>

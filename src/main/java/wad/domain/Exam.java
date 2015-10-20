@@ -25,7 +25,7 @@ public class Exam extends AbstractPersistable<Long> {
     @ManyToOne
     private Teacher examiner;
     
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany
     private List<Room> rooms;
     
     @NotNull

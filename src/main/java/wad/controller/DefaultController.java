@@ -1,11 +1,13 @@
 package wad.controller;
 
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import wad.domain.Exam;
+import wad.domain.Room;
 import wad.repository.ExamRepository;
 
 @Controller
@@ -23,7 +25,8 @@ public class DefaultController {
     @RequestMapping(value = "/course-exams", method = RequestMethod.GET)
     public String exams(Model model) {
         model.addAttribute("title", "Course Exams");
-        model.addAttribute("courses", examRepository.findByType(Exam.Type.COURSE));
+        model.addAttribute("courses", 
+            examRepository.findByType(Exam.Type.COURSE));
         return "exams";
     }
     

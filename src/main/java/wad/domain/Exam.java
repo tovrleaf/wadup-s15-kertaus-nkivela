@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.data.jpa.domain.AbstractPersistable;
@@ -25,12 +25,15 @@ public class Exam extends AbstractPersistable<Long> {
     @ManyToOne
     private Teacher examiner;
     
-    @ManyToMany
-    private List<Room> rooms;
+    @ManyToOne
+    private Room room;
     
     @NotNull
     @Temporal(TemporalType.TIMESTAMP)
     private Date dateTime;
+    
+    @Transient
+    private List<String> roomList;
     
     @NotNull
     private Type type;
@@ -59,20 +62,12 @@ public class Exam extends AbstractPersistable<Long> {
         this.examiner = examiner;
     }
 
-    public void addRoom(Room room) {
-        if (this.rooms == null) {
-            this.rooms = new ArrayList<Room>();
-        }
- 
-        this.rooms.add(room);
+    public Room getRoom() {
+        return room;
     }
- 
-    public List<Room> getRooms() {
-        return rooms;
-    }
- 
-    public void setRooms(List<Room> rooms) {
-        this.rooms = rooms;
+
+    public void setRoom(Room room) {
+        this.room = room;
     }
 
     public Date getDateTime() {
@@ -93,5 +88,21 @@ public class Exam extends AbstractPersistable<Long> {
     
     public enum Type {
         COURSE, SEPARATE;
+    }
+    
+    public void addRoomName(String name) {
+        if (this.roomList == null) {
+            this.roomList = new ArrayList<String>();
+        }
+ 
+        this.roomList.add(name);
+    }
+ 
+    public List<String> getRoomList() {
+        return roomList;
+    }
+ 
+    public void setRoomList(List<String> roomList) {
+        this.roomList = roomList;
     }
 }

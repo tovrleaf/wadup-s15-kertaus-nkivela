@@ -43,11 +43,7 @@
                         <td th:text="${course.type}"></td>
                         <td th:text="${course.courseCode}"></td>
                         <td th:text="${course.examiner.name}"></td>
-                        <td>
-                            <div th:each="r : ${course.rooms}">
-                                <span th:text="${r.name}"></span> 
-                            </div>
-                        </td>
+                        <td th:text="${course.room.name}"></td>
                     </tr>
                 </tbody>
             </table>

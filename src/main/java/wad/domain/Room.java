@@ -2,8 +2,7 @@ package wad.domain;
 
 import java.util.List;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
@@ -13,7 +12,7 @@ public class Room extends AbstractPersistable<Long> {
     @NotEmpty
     private String name;
     
-    @ManyToMany(mappedBy = "rooms")
+    @OneToMany
     private List<Exam> exams;
 
     public String getName() {

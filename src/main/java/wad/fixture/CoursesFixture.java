@@ -58,7 +58,7 @@ public class CoursesFixture {
         exam1.setCourseCode(581358);
         exam1.setName("Software Architecture");
         exam1.setExaminer(tuovinen);
-        exam1.addRoom(rA11);
+        exam1.setRoom(rA11);
         exam1.setDateTime(df.parse("20.10.2015 09:00"));
         exam1.setType(Exam.Type.COURSE);
         exam1 = examRepository.save(exam1);
@@ -67,7 +67,7 @@ public class CoursesFixture {
         exam2.setCourseCode(582670);
         exam2.setName("Algorithms for Bioinformatics");
         exam2.setExaminer(karkkainen);
-        exam2.addRoom(rA11);
+        exam2.setRoom(rA11);
         exam2.setDateTime(df.parse("20.10.2015 09:00"));
         exam2.setType(Exam.Type.COURSE);
         exam2 = examRepository.save(exam2);
@@ -76,7 +76,7 @@ public class CoursesFixture {
         exam3.setCourseCode(581259);
         exam3.setName("Software Engineering");
         exam3.setExaminer(luukkainen);
-        exam3.addRoom(rA11);
+        exam3.setRoom(rA11);
         exam3.setDateTime(df.parse("20.10.2015 09:00"));
         exam3.setType(Exam.Type.COURSE);
         exam3 = examRepository.save(exam3);
@@ -85,8 +85,7 @@ public class CoursesFixture {
         exam4.setCourseCode(581325);
         exam4.setName("Introduction to Programming");
         exam4.setExaminer(vihavainen);
-        exam4.addRoom(rA11);
-        exam4.addRoom(rB123);
+        exam4.setRoom(rB123);
         exam4.setDateTime(df.parse("20.10.2015 16:00"));
         exam4.setType(Exam.Type.COURSE);
         exam4 = examRepository.save(exam4);
@@ -95,7 +94,7 @@ public class CoursesFixture {
         exam5.setCourseCode(582715);
         exam5.setName("Register	Algorithms in Molecular Biology");
         exam5.setExaminer(makinen);
-        exam5.addRoom(rB123);
+        exam5.setRoom(rB123);
         exam5.setDateTime(df.parse("17.11.2015 16:00"));
         exam5.setType(Exam.Type.SEPARATE);
         exam5 = examRepository.save(exam5);

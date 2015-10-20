@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
@@ -21,12 +22,10 @@ public class Exam extends AbstractPersistable<Long> {
     @NotEmpty
     private String name;
     
-    // can be choosen later
     @ManyToOne
     private Teacher examiner;
     
-    // can be choosen later
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     private List<Room> rooms;
     
     @NotNull

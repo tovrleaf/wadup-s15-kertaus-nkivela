@@ -10,12 +10,5 @@ import wad.fixture.CoursesFixture;
 @Configuration
 @Profile(value = {"dev", "default"})
 public class DevProfile {
-    
-    @Autowired
-    private CoursesFixture coursesFixture;
-    
-    @PostConstruct
-    public void init() throws ParseException {
-        coursesFixture.populate();
-    }
+
 }

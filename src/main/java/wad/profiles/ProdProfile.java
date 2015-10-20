@@ -21,8 +21,8 @@ import wad.fixture.CoursesFixture;
 @Profile("prod")
 public class ProdProfile {
 
-    @Autowired
-    private CoursesFixture coursesFixture;
+
+
     
     @Bean
     public PlatformTransactionManager transactionManager() throws URISyntaxException {
@@ -65,12 +65,12 @@ public class ProdProfile {
         return basicDataSource;
     }
     
-    @PostConstruct
-    public void init() {
-        try {
-            coursesFixture.populate();
-        } catch (ParseException e) {
-            // do nothing
-        }
-    }
+    
+    
+    
+    
+    
+    
+    
+    
 }

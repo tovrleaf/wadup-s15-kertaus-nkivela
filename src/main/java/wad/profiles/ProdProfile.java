@@ -2,6 +2,8 @@ package wad.profiles;
 
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.text.ParseException;
+import javax.annotation.PostConstruct;
 import javax.sql.DataSource;
 import org.apache.commons.dbcp.BasicDataSource;
 import org.springframework.context.annotation.Bean;
@@ -57,4 +59,15 @@ public class ProdProfile {
 
         return basicDataSource;
     }
+    
+    @PostConstruct
+    public void init() {
+        DevProfile dev = new DevProfile();
+        try {
+            dev.init();
+        } catch (ParseException e) {
+            // do nothing
+        }
+    }
+    
 }

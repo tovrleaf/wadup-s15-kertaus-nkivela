@@ -34,7 +34,7 @@ public class Application {
         try {
             coursesFixture.populate();
         } catch (ParseException e) {
-        // do nothing
+            // do nothing
         }
     }
 }

@@ -25,11 +25,11 @@ public class CoursesFixture {
     
     public void populate() throws ParseException {
         Room rA11 = new Room();
-        rA11.setIdıentifier("A11");
+        rA11.setIdentifier("A11");
         rA11 = roomRepository.save(rA11);
         
         Room rB123 = new Room();
-        rB123.setIdıentifier("B123");
+        rB123.setIdentifier("B123");
         rB123 = roomRepository.save(rB123);
         
         Teacher tuovinen = new Teacher();

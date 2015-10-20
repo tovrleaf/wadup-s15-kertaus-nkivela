@@ -6,6 +6,7 @@ import java.text.ParseException;
 import javax.annotation.PostConstruct;
 import javax.sql.DataSource;
 import org.apache.commons.dbcp.BasicDataSource;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
@@ -14,11 +15,15 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaDialect;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
+import wad.fixture.CoursesFixture;
 
 @Configuration
 @Profile("prod")
 public class ProdProfile {
 
+    @Autowired
+    private CoursesFixture coursesFixture;
+    
     @Bean
     public PlatformTransactionManager transactionManager() throws URISyntaxException {
         JpaTransactionManager transactionManager = new JpaTransactionManager();
@@ -62,12 +67,10 @@ public class ProdProfile {
     
     @PostConstruct
     public void init() {
-        DevProfile dev = new DevProfile();
         try {
-            dev.init();
+            coursesFixture.populate();
         } catch (ParseException e) {
             // do nothing
         }
     }
-    
 }
